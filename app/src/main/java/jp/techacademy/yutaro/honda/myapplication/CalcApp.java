@@ -47,16 +47,17 @@ public class CalcApp extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v){
+        mEditText1 = (EditText) findViewById(R.id.editText1);
 
-        if( mEditText1.getText().toString().length() > 0);
-        {
-            data1 = Double.parseDouble(mEditText1.getText().toString());
-        }
-        if( mEditText2.getText().toString().length() > 0);
-        {
-            data2 = Double.parseDouble(mEditText2.getText().toString());
-        }
+        mEditText2 = (EditText) findViewById(R.id.editText2);
 
+
+        if( mEditText1.getText().toString().length() > 0)
+        { data1 = Double.parseDouble(mEditText1.getText().toString()); }
+        else { return; }
+        if( mEditText2.getText().toString().length() > 0)
+        { data2 = Double.parseDouble(mEditText2.getText().toString()); }
+        else { return; }
         if (v.getId() == R.id.button1) {
             type = 1;
         } else if (v.getId() == R.id.button2) {
